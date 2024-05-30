@@ -1,12 +1,12 @@
 import "@/styles/globals.css";
 import Navbar from "../components/Navbar";
-import MainCard from "@/components/MainCard";
+import AllCards from "@/components/AllCards";
 
 export default function App() {
   return(
     <div>
     <Navbar />
-    <MainCard />
+    <AllCards />
 
     </div >
     

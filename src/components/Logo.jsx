@@ -1,6 +1,6 @@
 function Logo() {
     return(
-        <h1>Logo</h1>
+        <h1>Climate Pulse</h1>
     );
     
 }
