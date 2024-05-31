@@ -60,7 +60,7 @@ function HighlightsMap(props) {
         >
           <p className="py-3 mx-3 whitespace-nowrap">{item.name}</p>
           <div>{item.icon}</div>
-          <p className="p-2">{item.key in props ? props[item.key] : null}{props.aqi && item.key in props.aqi ? props.aqi[item.key] : null}</p>
+          <p className="p-5">{item.key in props ? props[item.key] : null}{props.aqi && item.key in props.aqi ? props.aqi[item.key] : null}</p>
        
         </div>
       ))}
