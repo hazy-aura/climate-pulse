@@ -54,6 +54,10 @@ function MainCard(props) {
           </div>
         </div>
 
+        <div>
+          <p className="ml-16"> Feels Like: {props.feelslike}°</p>
+        </div>
+
         <div className="grid grid-cols-3 gap-1">
           <div className="flex flex-col p-3 justify-center items-center dark:text-gray-500">
             Pressure

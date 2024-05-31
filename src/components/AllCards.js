@@ -2,6 +2,7 @@ import axios from "axios";
 import MainCard from "./MainCard";
 import { useState, useEffect } from "react";
 import FutureWeatherCard from "./FutureWeatherCard";
+import Highlights from "./Highlights";
 
 function AllCards() {
   const [weatherData, setWeatherData] = useState([]);
@@ -10,7 +11,7 @@ function AllCards() {
     async function fetchData() {
       try {
         const res = await axios.get(
-          "https://api.weatherapi.com/v1/forecast.json?key=7126e91d17b34e038b0133451231209&q=dehradun&days=5&hour=12&alerts=yes&aqi=yes"
+          "https://api.weatherapi.com/v1/forecast.json?key=d2bab93f87d44b239ce94045243105&q=mussoorie&days=5&hour=12&alerts=yes&aqi=yes"
         );
         setWeatherData(res.data);
         console.log(res.data);
@@ -40,11 +41,17 @@ function AllCards() {
             visibility={weatherData.current?.vis_km}
             sunrise={weatherData.forecast?.forecastday[0].astro.sunrise}
             sunset={weatherData.forecast?.forecastday[0].astro.sunset}
+            feelslike={weatherData.current?.feelslike_c}
           />
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2 grid-rows-2">
           <FutureWeatherCard {...weatherData.forecast} />
+          <Highlights {...weatherData.current}
+          aqi={weatherData.current?.air_quality} />
+
+        
         </div>
+       
       </div>
     </>
   );
