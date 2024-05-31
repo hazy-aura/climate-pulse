@@ -58,7 +58,7 @@ function HighlightsMap(props) {
           key={index}
           className="dark:bg-myGray2 dark:border-gray-800 rounded-xl flex flex-col justify-center items-center w-1/5  px-20 m-10"
         >
-          <p className="py-3">{item.name}</p>
+          <p className="py-3 mx-3 whitespace-nowrap">{item.name}</p>
           <div>{item.icon}</div>
           <p className="p-2">{item.key in props ? props[item.key] : null}{props.aqi && item.key in props.aqi ? props.aqi[item.key] : null}</p>
        
