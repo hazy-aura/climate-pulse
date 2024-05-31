@@ -23,8 +23,8 @@ function MainCard(props) {
   
 
   return(
-    <>
-      <div className=" m-10 max-w-sm bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray dark:border-gray-700">
+    
+      <div className=" w-3/7 m-10 max-w-sm bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray dark:border-gray-700">
         <div className="flex">
           <div className="m-2 bg-white text-black inline-block py-1 px-2 text-sm rounded-3xl">
             {props.locationName}
@@ -88,7 +88,7 @@ function MainCard(props) {
         </div>
 
       </div>
-    </>
+    
   );
 }
 export default MainCard;

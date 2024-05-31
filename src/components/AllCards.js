@@ -1,6 +1,7 @@
 import axios from "axios";
 import MainCard from "./MainCard";
 import { useState, useEffect } from "react";
+import FutureWeatherCard from "./FutureWeatherCard";
 
 function AllCards() {
   const [weatherData, setWeatherData] = useState([]);
@@ -9,7 +10,7 @@ function AllCards() {
     async function fetchData() {
       try {
         const res = await axios.get(
-          "https://api.weatherapi.com/v1/forecast.json?key=7126e91d17b34e038b0133451231209&q=mussoorie&days=5&hour=12&alerts=yes&aqi=yes"
+          "https://api.weatherapi.com/v1/forecast.json?key=7126e91d17b34e038b0133451231209&q=dehradun&days=5&hour=12&alerts=yes&aqi=yes"
         );
         setWeatherData(res.data);
         console.log(res.data);
@@ -26,21 +27,25 @@ function AllCards() {
     <h1>Loading...</h1>
   ) : (
     <>
-      <MainCard
-        locationName={weatherData.location?.name}
-        localtime={weatherData.location?.localtime}
-        icon={weatherData?.current?.condition?.icon}
-        conditionText ={weatherData.current?.condition?.text}
-        currentTemp = {weatherData.current?.temp_c}
-        pressure = {weatherData.current?.pressure_mb}
-        humidity ={weatherData.current?.humidity}
-        visibility ={weatherData.current?.vis_km}
-        sunrise ={weatherData.forecast?.forecastday[0].astro.sunrise}
-        sunset ={weatherData.forecast?.forecastday[0].astro.sunset}
-
-
-
-      />
+      <div className="grid grid-cols-3">
+        <div className="col-span-1">
+          <MainCard
+            locationName={weatherData.location?.name}
+            localtime={weatherData.location?.localtime}
+            icon={weatherData?.current?.condition?.icon}
+            conditionText={weatherData.current?.condition?.text}
+            currentTemp={weatherData.current?.temp_c}
+            pressure={weatherData.current?.pressure_mb}
+            humidity={weatherData.current?.humidity}
+            visibility={weatherData.current?.vis_km}
+            sunrise={weatherData.forecast?.forecastday[0].astro.sunrise}
+            sunset={weatherData.forecast?.forecastday[0].astro.sunset}
+          />
+        </div>
+        <div className="col-span-2">
+          <FutureWeatherCard {...weatherData.forecast} />
+        </div>
+      </div>
     </>
   );
 }
