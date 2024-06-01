@@ -1,15 +1,15 @@
 import "@/styles/globals.css";
-import Navbar from "../components/Navbar";
-import AllCards from "@/components/AllCards";
+import {Provider} from "react-redux";
+import store from "../../redux/store"
 
-export default function App() {
-  return(
-    <div>
-    <Navbar />
-    <AllCards />
 
-    </div >
+export default function App({ Component, pageProps }) {
+  return (
     
+     
+        <Component {...pageProps} />
+      
 
-  )
+   
+  );
 }

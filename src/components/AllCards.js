@@ -11,7 +11,7 @@ function AllCards() {
     async function fetchData() {
       try {
         const res = await axios.get(
-          "https://api.weatherapi.com/v1/forecast.json?key=d2bab93f87d44b239ce94045243105&q=mussoorie&days=5&hour=12&alerts=yes&aqi=yes"
+          "https://api.weatherapi.com/v1/forecast.json?key=d2bab93f87d44b239ce94045243105&q=dehradun&days=5&hour=12&alerts=yes&aqi=yes"
         );
         setWeatherData(res.data);
         console.log(res.data);
