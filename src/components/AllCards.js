@@ -1,59 +1,53 @@
-import axios from "axios";
+// components/AllCards.js
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWeatherData } from "../redux/slices/locationSlice";  // Correct import path
 import MainCard from "./MainCard";
-import { useState, useEffect } from "react";
 import FutureWeatherCard from "./FutureWeatherCard";
 import Highlights from "./Highlights";
 
 function AllCards() {
-  const [weatherData, setWeatherData] = useState([]);
+  const dispatch = useDispatch();
+  const weatherData = useSelector((state) => state.location.data);  // Corrected state access
+  const weatherStatus = useSelector((state) => state.location.status);
+  const weatherError = useSelector((state) => state.location.error);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await axios.get(
-          "https://api.weatherapi.com/v1/forecast.json?key=d2bab93f87d44b239ce94045243105&q=dehradun&days=5&hour=12&alerts=yes&aqi=yes"
-        );
-        setWeatherData(res.data);
-        console.log(res.data);
-      } catch (error) {
-        console.error("An error occurred while fetching data:", error);
-      }
-    }
-    fetchData();
-  }, []);
+    dispatch(fetchWeatherData("dehradun"));
+  }, [dispatch]);
 
-  return !weatherData ? (
-    <h1>Loading...</h1>
-  ) : !weatherData ? (
-    <h1>Loading...</h1>
-  ) : (
-    <>
-      <div className="grid grid-cols-3">
-        <div className="col-span-1">
-          <MainCard
-            locationName={weatherData.location?.name}
-            localtime={weatherData.location?.localtime}
-            icon={weatherData?.current?.condition?.icon}
-            conditionText={weatherData.current?.condition?.text}
-            currentTemp={weatherData.current?.temp_c}
-            pressure={weatherData.current?.pressure_mb}
-            humidity={weatherData.current?.humidity}
-            visibility={weatherData.current?.vis_km}
-            sunrise={weatherData.forecast?.forecastday[0].astro.sunrise}
-            sunset={weatherData.forecast?.forecastday[0].astro.sunset}
-            feelslike={weatherData.current?.feelslike_c}
-          />
-        </div>
-        <div className="col-span-2 grid-rows-2">
-          <FutureWeatherCard {...weatherData.forecast} />
-          <Highlights {...weatherData.current}
-          aqi={weatherData.current?.air_quality} />
+  if (weatherStatus === "loading") {
+    return <h1>Loading...</h1>;
+  } else if (weatherStatus === "failed") {
+    return <h1>An error occurred: {weatherError}</h1>;
+  }
 
-        
-        </div>
-       
+  return weatherData ? (
+    <div className="grid grid-cols-3">
+      <div className="col-span-1">
+        <MainCard
+          locationName={weatherData.location?.name}
+          locationRegion={weatherData.location?.region}
+          locationCountry = {weatherData.location?.country}
+          localtime={weatherData.location?.localtime}
+          icon={weatherData?.current?.condition?.icon}
+          conditionText={weatherData.current?.condition?.text}
+          currentTemp={weatherData.current?.temp_c}
+          pressure={weatherData.current?.pressure_mb}
+          humidity={weatherData.current?.humidity}
+          visibility={weatherData.current?.vis_km}
+          sunrise={weatherData.forecast?.forecastday[0].astro.sunrise}
+          sunset={weatherData.forecast?.forecastday[0].astro.sunset}
+          feelslike={weatherData.current?.feelslike_c}
+        />
       </div>
-    </>
+      <div className="col-span-2 grid-rows-2">
+        <FutureWeatherCard {...weatherData.forecast} />
+        <Highlights {...weatherData.current} aqi={weatherData.current?.air_quality} />
+      </div>
+    </div>
+  ) : (
+    <h1>Loading...</h1>
   );
 }
 

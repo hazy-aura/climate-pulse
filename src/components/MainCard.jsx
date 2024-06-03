@@ -1,6 +1,40 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { BsFillSunsetFill,BsFillSunriseFill } from "react-icons/bs";
+
+
+
+function formatTime(timeString) {
+  const [datePart, timePart] = timeString.split(' ');
+  const [hours, minutes] = timePart.split(':');
+  const date = new Date();
+  date.setHours(hours);
+  date.setMinutes(minutes);
+  return date.toLocaleTimeString('en-US',{
+    hour:'numeric',
+    minute:'numeric',
+    hour12: true
+
+  });
+
+}
+
+function formatDate(dateString) {
+  const [datePart, timePart] = dateString.split(' ');
+  const [year,month,date]= datePart.split('-');
+  const futuredate = new Date();
+  futuredate.setFullYear(year);
+  futuredate.setMonth(month-1);
+  futuredate.setDate(date);
+ 
+
+  return futuredate.toLocaleDateString('en-US',{
+    year:'2-digit',
+    month:'short',
+    day:'2-digit'
+    
+  });
+
+  
+}
 
 function MainCard(props) {
   // const [weatherData, setWeatherData] = useState([]);
@@ -25,12 +59,13 @@ function MainCard(props) {
   return(
     
       <div className=" w-3/7 m-10 max-w-sm bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray dark:border-gray-700">
-        <div className="flex">
+        <div className="flex justify-between">
           <div className="m-2 bg-white text-black inline-block py-1 px-2 text-sm rounded-3xl">
-            {props.locationName}
+            {props.locationName}, {props.locationRegion}, {props.locationCountry}
           </div>
-          <div className="flex p-2 pl-36">
-            <p>{props.localtime}</p>
+          <div className="flex p-2 ">
+            <p>{formatTime(props.localtime)}, {formatDate(props.localtime)}</p>
+
           </div>
         </div>
 
@@ -53,7 +88,7 @@ function MainCard(props) {
             </h1>
           </div>
         </div>
-
+        
         <div>
           <p className="ml-16"> Feels Like: {props.feelslike}°</p>
         </div>
