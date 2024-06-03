@@ -52,11 +52,11 @@ function HighlightsMap(props) {
   ];
 
   return (
-    <div className="grid grid-cols-3 px-8 ">
+    <div className="w-full carousel">
       {itemsToRender.map((item, index) => (
         <div
           key={index}
-          className="dark:bg-myGray2 dark:border-gray-800 rounded-xl flex flex-col justify-center items-center w-1/5 px-20 m-10"
+          className="flex flex-col m-3 w-32 h-50 carousel-item items-center dark:bg-myGray2 dark:border-gray-800 rounded-xl"
         >
           <p className="py-3 mx-3 whitespace-nowrap">{item.name}</p>
           <div>{item.icon}</div>

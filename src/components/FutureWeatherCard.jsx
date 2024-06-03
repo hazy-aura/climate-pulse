@@ -30,10 +30,10 @@ function FutureWeatherCard(props) {
   return (
     <div className=" md:w-4/7 m-10  bg-white border  border-gray-200 rounded-xl shadow dark:bg-myGray3 dark:border-gray-800 overflow-auto">
         <h1 className=" flex m-7 text-xl text-center">Daily Weather</h1>
-      <div className="flex ">
+      <div className="w-full carousel ">
         {props.forecastday && props.forecastday.length > 0 ? (
           props.forecastday.map((item, index) => (
-            <div key={index} className="flex flex-col carousel-item items-center m-5 dark:bg-myGray2 dark:border-gray-800 rounded-xl md:w-1/6  sm:gap-2">
+            <div key={index} className="flex flex-col m-5 w-32 h-50 carousel-item items-center dark:bg-myGray2 dark:border-gray-800 rounded-xl ">
                 <div className=" m-2 text-xl"><p>{getDay(item.date)}</p></div>
                 <div> { formatDate(item.date) } </div>
                 
