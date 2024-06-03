@@ -42,12 +42,14 @@ function MainCard(props) {
 
   return(
     
-      <div className=" sm:w-3/4 sm md:w-3/7 m-10 max-w-sm border rounded-xl shadow dark:bg-myGray dark:border-gray-900 overflow-auto">
-        <div className="flex justify-between">
-          <div className="m-2 bg-white text-black inline-block py-1 px-2 text-sm rounded-3xl">
+      <div className=" sm:w-3/4 bg-logo2  border-gray-200 sm md:w-3/7 m-10 max-w-sm border rounded-xl shadow dark:bg-myGray dark:border-gray-900 overflow-auto">
+        <div className="md:flex sm:block  md:justify-between">
+        <div className="flex justify-center">
+        <div className="m-2 bg-logo2 text-black  inline-block text-nowrap text-center py-1 px-2 text-sm rounded-3xl">
             {props.locationName}, {props.locationRegion}, {props.locationCountry}
           </div>
-          <div className="flex p-2 ">
+          </div> 
+          <div className="flex p-2 justify-center text-nowrap ">
             <p>{formatTime(props.localtime)}, {formatDate(props.localtime)}</p>
 
           </div>
