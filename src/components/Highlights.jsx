@@ -42,7 +42,7 @@ function HighlightsMap(props) {
     {
       name: "Air Quality",
       key: "us-epa-index",
-      icon: <FaTachometerAlt size={70} color={ AQI>=3? AQI>=4? 'red':'orange' : AQI>1?'yellow':'green'} />,
+      icon: <FaTachometerAlt size={70} color={ AQI>=3? AQI>=4? "red":"orange" : AQI>1?"yellow":"green"} />,
     },
     {
       name: "Dew Point",
