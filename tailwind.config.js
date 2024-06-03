@@ -20,7 +20,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily:{
-        pt_sans:[ "Fredericka the Great", "serif"],
+        ptserif: [  "Roboto Condensed", "sans-serif"],
         sedan:["Sedan SC", "serif"],
 
       },

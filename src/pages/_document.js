@@ -4,8 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=PT+Sans+Narrow:wght@400;700&family=Sedan+SC&display=swap" rel="stylesheet"></link>
-
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sedan+SC&display=swap" rel="stylesheet"></link>
       </Head>
       <body>
         <Main />

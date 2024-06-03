@@ -27,7 +27,7 @@ function formatDate(dateString) {
  
 
   return futuredate.toLocaleDateString('en-US',{
-    year:'2-digit',
+    
     month:'short',
     day:'2-digit'
     
@@ -42,7 +42,7 @@ function MainCard(props) {
 
   return(
     
-      <div className=" sm:w-3/4 md:w-3/7 m-10 max-w-sm bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray dark:border-gray-700 overflow-auto">
+      <div className=" sm:w-3/4 sm md:w-3/7 m-10 max-w-sm border rounded-xl shadow dark:bg-myGray dark:border-gray-900 overflow-auto">
         <div className="flex justify-between">
           <div className="m-2 bg-white text-black inline-block py-1 px-2 text-sm rounded-3xl">
             {props.locationName}, {props.locationRegion}, {props.locationCountry}
