@@ -8,7 +8,7 @@ function Highlights(props) {
     
   return (
     <div className="w-4/7 m-10 grid-cols-3 bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray3 dark:border-gray-900 overflow-auto">
-      <h1 className=" flex m-7  text-xl text-center">Today's Highlights</h1>
+      <h1 className=" flex m-7  text-xl text-center">Today&#x2019;s Highlights</h1>
       <div className=" grid grid-cols-1">
         <HighlightsMap {...props} />
       </div>
