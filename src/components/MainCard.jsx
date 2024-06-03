@@ -58,6 +58,7 @@ function MainCard(props) {
             <img
               src={`https:${props.icon}`}
               className="inline-block pl-5 "
+              alt="image"
             />
           )}
 
