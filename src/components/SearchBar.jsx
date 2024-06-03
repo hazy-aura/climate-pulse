@@ -46,7 +46,8 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+    <div className="md:mx-auto sm:mx-10 sm:inline-block">
+      <form onSubmit={handleSubmit} className="max-w-md mx-10">
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -90,6 +91,7 @@ function SearchBar() {
         )
       }
     </form>
+    </div>
   );
 }
 

@@ -4,16 +4,16 @@ function Logo() {
     return(
 
        <>
-       <div className='flex'>
+       <div className='flex justify-center sm:justify-start items-center overflow-auto'>
        <Image
        className='ml-8'
       src={LogoCp}
       width={50}
       height={50}
       alt="CP"
-    />
-    <h5 className='flex items-center pl-5 text-2xl font-semibold font-sedan'> <p className='text-logoColor'>Cli</p> mate <p className='text-logoColor'>Pul</p>se</h5>
-       </div>
+     />
+     <h5 className='flex items-center pl-5 text-2xl font-semibold font-sedan'> <p className='text-logoColor'>Cli</p> mate <p className='text-logoColor'>Pul</p>se</h5>
+    </div>
        </>
     );
     

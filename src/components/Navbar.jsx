@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 function Navbar() {
     
     return(
-        <div className="flex w-full ">
+        <div className="md:flex w-full sm:block sm:text-center ">
         <Logo />
         <SearchBar />
 

@@ -23,7 +23,7 @@ function AllCards() {
   }
 
   return weatherData ? (
-    <div className="grid grid-cols-3">
+    <div className="md:grid md:grid-cols-3 sm:block sm:justify-center">
       <div className="col-span-1">
         <MainCard
           locationName={weatherData.location?.name}
@@ -41,7 +41,7 @@ function AllCards() {
           feelslike={weatherData.current?.feelslike_c}
         />
       </div>
-      <div className="col-span-2 grid-rows-2">
+      <div className="col-span-2 overflow-auto md:grid-rows-2 sm:block">
         <FutureWeatherCard {...weatherData.forecast} />
         <Highlights {...weatherData.current} aqi={weatherData.current?.air_quality} />
       </div>

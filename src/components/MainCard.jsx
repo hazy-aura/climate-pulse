@@ -37,28 +37,12 @@ function formatDate(dateString) {
 }
 
 function MainCard(props) {
-  // const [weatherData, setWeatherData] = useState([]);
-  // const somedependency = false;
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const res = await axios.get(
-  //         "https://api.weatherapi.com/v1/forecast.json?key=7126e91d17b34e038b0133451231209&q=mussoorie&days=5&hour=12&alerts=yes&aqi=yes"
-  //       );
-  //       setWeatherData(res.data);
-  //       console.log(res.data);
-  //     } catch (error) {
-  //       console.error("An error occurred while fetching data:", error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
   
 
   return(
     
-      <div className=" w-3/7 m-10 max-w-sm bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray dark:border-gray-700">
+      <div className=" sm:w-3/4 md:w-3/7 m-10 max-w-sm bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray dark:border-gray-700 overflow-auto">
         <div className="flex justify-between">
           <div className="m-2 bg-white text-black inline-block py-1 px-2 text-sm rounded-3xl">
             {props.locationName}, {props.locationRegion}, {props.locationCountry}

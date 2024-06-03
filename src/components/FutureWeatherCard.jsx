@@ -28,12 +28,12 @@ function FutureWeatherCard(props) {
     
 
   return (
-    <div className="w-4/7 m-10  bg-white border  border-gray-200 rounded-xl shadow dark:bg-myGray3 dark:border-gray-800">
+    <div className=" md:w-4/7 m-10  bg-white border  border-gray-200 rounded-xl shadow dark:bg-myGray3 dark:border-gray-800 overflow-auto">
         <h1 className=" flex m-7 text-xl text-center">Daily Weather</h1>
       <div className="flex ">
         {props.forecastday && props.forecastday.length > 0 ? (
           props.forecastday.map((item, index) => (
-            <div key={index} className="flex flex-col carousel-item items-center m-5 dark:bg-myGray2 dark:border-gray-800 rounded-xl w-1/6">
+            <div key={index} className="flex flex-col carousel-item items-center m-5 dark:bg-myGray2 dark:border-gray-800 rounded-xl md:w-1/6  sm:gap-2">
                 <div className=" m-2 text-xl"><p>{getDay(item.date)}</p></div>
                 <div> { formatDate(item.date) } </div>
                 

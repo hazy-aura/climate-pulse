@@ -7,7 +7,7 @@ function Highlights(props) {
    
     
   return (
-    <div className="w-4/7 m-10 grid-cols-3 bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray3 dark:border-gray-800">
+    <div className="w-4/7 m-10 grid-cols-3 bg-white border border-gray-200 rounded-xl shadow dark:bg-myGray3 dark:border-gray-800 overflow-auto">
       <h1 className=" flex m-7  text-xl text-center">Today's Highlights</h1>
       <div className=" grid grid-cols-1">
         <HighlightsMap {...props} />
@@ -56,7 +56,7 @@ function HighlightsMap(props) {
       {itemsToRender.map((item, index) => (
         <div
           key={index}
-          className="dark:bg-myGray2 dark:border-gray-800 rounded-xl flex flex-col justify-center items-center w-1/5  px-20 m-10"
+          className="dark:bg-myGray2 dark:border-gray-800 rounded-xl flex flex-col justify-center items-center w-1/5 px-20 m-10"
         >
           <p className="py-3 mx-3 whitespace-nowrap">{item.name}</p>
           <div>{item.icon}</div>
