@@ -12,7 +12,7 @@ function Logo() {
       height={50}
       alt="CP"
      />
-     <h5 className='flex items-center pl-5 text-2xl font-semibold font-sedan'> <p className='text-logoColor'>Cli</p> mate <p className='text-logoColor'>Pul</p>se</h5>
+     <h5 className='flex items-center pl-5 text-2xl font-semibold font-sedan '> <p className='text-logoColor'>Cli</p> <p className='text-logo2'>mate</p> <p className='text-logoColor'>Pul</p><p className='text-logo2'>se</p></h5>
     </div>
        </>
     );

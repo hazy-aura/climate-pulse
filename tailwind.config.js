@@ -12,6 +12,7 @@ module.exports = {
         myGray2: '#1a1b1d',
         myGray3:'#101010',
         logoColor: '#002d3d',
+        logo2: '#fff4e6',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
